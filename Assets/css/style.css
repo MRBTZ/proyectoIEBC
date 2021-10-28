@@ -118,4 +118,16 @@
 	}
   }
 
+/*datos de los botones de estudiantes*/
+.linkgrados{
+	color: #000000;
+	border: #FFF groove;
+	background-color: rgb(255, 255, 255);
+	font: 100 bolder ;
+	font-weight: 900;
+	opacity: 80%;
+	font-family: 'Times New Roman', Times, serif;
+	
+}
+
 

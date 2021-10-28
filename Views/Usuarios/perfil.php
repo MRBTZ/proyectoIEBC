@@ -17,7 +17,7 @@
       <div class="tile p-0">
         <ul class="nav flex-column nav-tabs user-tabs">
           <li class="nav-item"><a class="nav-link active" href="#user-timeline" data-toggle="tab">Datos personales</a></li>
-          <li class="nav-item"><a class="nav-link" href="#user-settings" data-toggle="tab">Datos fiscales</a></li>
+          <li class="nav-item"><a class="nav-link" href="#user-settings" data-toggle="tab">Datos Extras</a></li>
         </ul>
       </div>
     </div>
