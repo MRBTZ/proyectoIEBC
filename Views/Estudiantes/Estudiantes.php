@@ -17,6 +17,13 @@
         </ul>
       </div>
 
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
         <div class="row">
           
           <?php if(!empty($_SESSION['permisos'][3]['r'])){ ?>
@@ -24,9 +31,9 @@
             <div class="widget-small primary"><i class="icon fas fa-tasks fa-3x"></i>
               <div class="info">
                 <h4>PRIMERO</h4>
-                <p><b>5</b></p>
+                <!--<p><b>5</b></p>-->
                 <br>
-                <a href="<?= base_url(); ?>/estudiantes1" class="btn btn-primary">CONSULTA  <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url(); ?>/estudiantesp" class="btn btn-primary">CONSULTA  <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
           </div>
@@ -37,9 +44,9 @@
             <div class="widget-small info"><i class="icon fas fa-tasks fa-3x"></i>
               <div class="info">
                 <h4>SEGUNDO</h4>
-                <p><b>25</b></p>
+                <!--<p><b>25</b></p>-->
                 <br>
-                <a href="<?= base_url(); ?>/estudiantes2" class="btn btn-info">CONSULTA  <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url(); ?>/estudiantess" class="btn btn-info">CONSULTA  <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
           </div>
@@ -50,9 +57,9 @@
             <div class="widget-small danger"><i class="icon fas fa-tasks fa-3x"></i>
               <div class="info">
                 <h4>TERCERO</h4>
-                <p><b>10</b></p>
+                <!--<p><b>10</b></p>-->
                 <br>
-                <a href="<?= base_url(); ?>/estudiantes3" class="btn btn-danger">CONSULTA  <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?= base_url(); ?>/estudiantest" class="btn btn-danger">CONSULTA  <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
           </div>

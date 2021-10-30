@@ -43,6 +43,11 @@
           <div class="form-group btn-container">
             <button type="submit" class="btn btn-outline-success btn-block">INGRESO</button>
           </div>
+          <br>
+         <br>
+          <div class="form-group btn-container">
+            <a class="button background2-left-column" href="<?= base_url(); ?>" class="btn btn-primary">Regresar</a>
+          </div>
         </form>
 
 

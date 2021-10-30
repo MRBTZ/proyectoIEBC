@@ -86,6 +86,22 @@
 	        return $return;
 		}
 
+		// consulta a la bd a la data tables
+		public function selectEstudiantes()
+		{
+			$whereAdmin = "";
+			if($_SESSION['idUser'] != 1 ){
+				$whereAdmin = " and p.idpersona != 1 ";
+			}
+			$sql = "SELECT e.idestudiante,e.identificacion,e.nombres,e.apellidos,e.telefono,e.direccion, e.nombresE, e.apellidosE, e.fechaN, e.descripcionP,g.grado 
+					FROM estudiante e 
+					INNER JOIN grado g
+					ON e.gradoid = g.idgrado
+					WHERE e.gradoid = 1".$whereAdmin;
+					$request = $this->select_all($sql);
+					return $request;
+		}
+
 
 
 	}//fin de la clase

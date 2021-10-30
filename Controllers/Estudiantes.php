@@ -130,6 +130,14 @@
 			die();
 		}
 
+		//datos de la data tables
+		public function getEstudiantes()
+		{
+			$arrData = $this->model->selectEstudiantes();
+			dep($arrData);
+		}
+
+
 
 
 

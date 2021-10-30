@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="<?= media();?>/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?= media();?>/css/tarjetas.css">
     <link rel="stylesheet" type="text/css" href="<?= media();?>/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
     
     <title><?= $data['page_tag']; ?></title>
@@ -30,11 +30,11 @@
 		<div class="left-column background1-left-column">
 			<h6>Control de asistencias</h6>
 			<h2>QR</h2>
-			<i class="fa fa-github"></i>			
+			<i class="fas fa-qrcode"></i>			
 		</div>
 
 		<div class="right-column">
-      <p class="p background1-left-column"  href="<?= base_url(); ?>/usuarios">Empezar</p>
+      <a class="button background2-left-column" href="<?= base_url(); ?>/asistencia" class="btn btn-primary">INGRESAR</a>
 		</div>
 
 	</div>
@@ -43,11 +43,11 @@
 		<div class="left-column background2-left-column">
 			<h6>sistema IEBC</h6>
 			<h2>Ingreso</h2>
-			<i class="fa fa-android" aria-hidden="true"></i>			
+			<i class="fas fa-sign-in-alt"></i>			
 		</div>
 
 		<div class="right-column">
-			<button class="button background2-left-column">Empezar</button>
+			<a class="button background2-left-column" href="<?= base_url(); ?>/login" class="btn btn-primary">INGRESAR</a>
 		</div>
 		
 	</div>
@@ -60,5 +60,6 @@
     </script>
 
     <script src="<?= media(); ?>/js/estilos_css.js"></script>
+    <script src="<?= media();?>/js/fontawesome.js"></script>
  
   </body>
