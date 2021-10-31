@@ -1,6 +1,6 @@
-  /*tarjetas*/
+/*tarjetas*/
 
-  :root{
+:root{
 	--white-text:#fff;
 	--background:#FFFFFF;
 	--black-text:rgb(68, 66, 66)	
@@ -34,18 +34,18 @@ body {
 .container{
 	display: flex;
 	justify-content: center;
-	height: 80vh;
+	height: 90vh;
     align-items: center;
 }
 
 .card {
 	background-color:var(--white-text);
-	border-radius: 1rem;
-	box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+	border-radius: 2rem;
+	box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2); /*Contorno o sombra*/
 	display: flex;	
 	margin: 1.5rem;
 	overflow: hidden;
-	width: 30rem;
+	width: 25rem;
 	height: 25rem;
 }
 

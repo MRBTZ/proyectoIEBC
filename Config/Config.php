@@ -1,5 +1,5 @@
-<?php 
-	
+<?php
+
 	//define("BASE_URL", "http://localhost/Proyectos/IEBC");
 	const BASE_URL = "http://localhost/Proyectos/IEBC";
 
@@ -25,11 +25,11 @@
 	const EMAIL_REMITENTE = "no-reply@iebc.com";
 	const NOMBRE_EMPESA = "SISTEMA IEBC";
 	const WEB_EMPRESA = "https://www.facebook.com/ibchotcaj1";
-	
 
 
 
-	
+
+
 
 
  ?>

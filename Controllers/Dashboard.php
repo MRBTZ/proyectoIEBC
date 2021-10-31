@@ -1,5 +1,5 @@
 <?php 
-
+	
 	class Dashboard extends Controllers{
 		public function __construct()
 		{
@@ -12,7 +12,7 @@
 			}
 			getPermisos(1);
 		}
-
+		
 		public function dashboard()
 		{
 			$data['page_id'] = 2;
@@ -22,6 +22,6 @@
 			$data['page_functions_js'] = "functions_dashboard.js";
 			$this->views->getView($this,"dashboard",$data);
 		}
-
+		
 	}
- ?>
+?>

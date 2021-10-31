@@ -1,5 +1,5 @@
 <?php 
-
+	
 	class PermisosModel extends Mysql
 	{
 		public $intIdpermiso;
@@ -9,12 +9,12 @@
 		public $w;
 		public $u;
 		public $d;
-
+		
 		public function __construct()
 		{
 			parent::__construct();
 		}
-
+		
 		public function selectModulos()
 		{
 			$sql = "SELECT * FROM modulo WHERE status != 0";
@@ -28,7 +28,7 @@
 			$request = $this->select_all($sql);
 			return $request;
 		}
-
+		
 		public function deletePermisos(int $idrol)
 		{
 			$this->intRolid = $idrol;
@@ -36,7 +36,7 @@
 			$request = $this->delete($sql);
 			return $request;
 		}
-
+		
 		public function insertPermisos(int $idrol, int $idmodulo, int $r, int $w, int $u, int $d){
 			$this->intRolid = $idrol;
 			$this->intModuloid = $idmodulo;
@@ -49,20 +49,20 @@
         	$request_insert = $this->insert($query_insert,$arrData);		
 	        return $request_insert;
 		}
-
+		
 		public function permisosModulo(int $idrol){
 			$this->intRolid = $idrol;
 			$sql = "SELECT p.rolid,
-						   p.moduloid,
-						   m.titulo as modulo,
-						   p.r,
-						   p.w,
-						   p.u,
-						   p.d 
-					FROM permisos p 
-					INNER JOIN modulo m
-					ON p.moduloid = m.idmodulo
-					WHERE p.rolid = $this->intRolid";
+			p.moduloid,
+			m.titulo as modulo,
+			p.r,
+			p.w,
+			p.u,
+			p.d 
+			FROM permisos p 
+			INNER JOIN modulo m
+			ON p.moduloid = m.idmodulo
+			WHERE p.rolid = $this->intRolid";
 			$request = $this->select_all($sql);
 			$arrPermisos = array();
 			for ($i=0; $i < count($request); $i++) { 
@@ -71,4 +71,4 @@
 			return $arrPermisos;
 		}
 	}
- ?>
+?>

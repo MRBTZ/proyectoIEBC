@@ -1,5 +1,5 @@
 <?php 
-
+	
 	class Usuarios extends Controllers{
 		public function __construct()
 		{
@@ -11,7 +11,7 @@
 			}
 			getPermisos(2);
 		}
-
+		
 		public function Usuarios()
 		{
 			if(empty($_SESSION['permisosMod']['r'])){
@@ -23,13 +23,13 @@
 			$data['page_functions_js'] = "functions_usuarios.js";
 			$this->views->getView($this,"usuarios",$data);
 		}
-
+		
 		public function setUsuario(){
 			if($_POST){			
 				if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono']) || empty($_POST['txtEmail']) || empty($_POST['listRolid']) || empty($_POST['listStatus']) )
 				{
 					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-				}else{ 
+					}else{ 
 					$idUsuario = intval($_POST['idUsuario']);
 					$strIdentificacion = strClean($_POST['txtIdentificacion']);
 					$strNombre = ucwords(strClean($_POST['txtNombre']));
@@ -43,44 +43,44 @@
 					{
 						$option = 1;
 						$strPassword =  empty($_POST['txtPassword']) ? hash("SHA256",passGenerator()) : hash("SHA256",$_POST['txtPassword']);
-
+						
 						if($_SESSION['permisosMod']['w']){
 							$request_user = $this->model->insertUsuario($strIdentificacion,
-																				$strNombre, 
-																				$strApellido, 
-																				$intTelefono, 
-																				$strEmail,
-																				$strPassword, 
-																				$intTipoId, 
-																				$intStatus );
+							$strNombre, 
+							$strApellido, 
+							$intTelefono, 
+							$strEmail,
+							$strPassword, 
+							$intTipoId, 
+							$intStatus );
 						}
-					}else{
+						}else{
 						$option = 2;
 						$strPassword =  empty($_POST['txtPassword']) ? "" : hash("SHA256",$_POST['txtPassword']);
 						if($_SESSION['permisosMod']['u']){
 							$request_user = $this->model->updateUsuario($idUsuario,
-																		$strIdentificacion, 
-																		$strNombre,
-																		$strApellido, 
-																		$intTelefono, 
-																		$strEmail,
-																		$strPassword, 
-																		$intTipoId, 
-																		$intStatus);
+							$strIdentificacion, 
+							$strNombre,
+							$strApellido, 
+							$intTelefono, 
+							$strEmail,
+							$strPassword, 
+							$intTipoId, 
+							$intStatus);
 						}
-
+						
 					}
-
+					
 					if($request_user > 0 )
 					{
 						if($option == 1){
 							$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
-						}else{
+							}else{
 							$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 						}
-					}else if($request_user == 'exist'){
+						}else if($request_user == 'exist'){
 						$arrResponse = array('status' => false, 'msg' => '¡Atención! el email o la identificación ya existe, ingrese otro.');		
-					}else{
+						}else{
 						$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 					}
 				}
@@ -88,7 +88,7 @@
 			}
 			die();
 		}
-
+		
 		public function getUsuarios()
 		{
 			if($_SESSION['permisosMod']['r']){
@@ -97,32 +97,32 @@
 					$btnView = '';
 					$btnEdit = '';
 					$btnDelete = '';
-
+					
 					if($arrData[$i]['status'] == 1)
 					{
 						$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
-					}else{
+						}else{
 						$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 					}
-
+					
 					if($_SESSION['permisosMod']['r']){
 						$btnView = '<button class="btn btn-info btn-sm btnViewUsuario" onClick="fntViewUsuario('.$arrData[$i]['idpersona'].')" title="Ver usuario"><i class="far fa-eye"></i></button>';
 					}
 					if($_SESSION['permisosMod']['u']){
 						if(($_SESSION['idUser'] == 1 and $_SESSION['userData']['idrol'] == 1) ||
-							($_SESSION['userData']['idrol'] == 1 and $arrData[$i]['idrol'] != 1) ){
+						($_SESSION['userData']['idrol'] == 1 and $arrData[$i]['idrol'] != 1) ){
 							$btnEdit = '<button class="btn btn-primary  btn-sm btnEditUsuario" onClick="fntEditUsuario(this,'.$arrData[$i]['idpersona'].')" title="Editar usuario"><i class="fas fa-pencil-alt"></i></button>';
-						}else{
+							}else{
 							$btnEdit = '<button class="btn btn-secondary btn-sm" disabled ><i class="fas fa-pencil-alt"></i></button>';
 						}
 					}
 					if($_SESSION['permisosMod']['d']){
 						if(($_SESSION['idUser'] == 1 and $_SESSION['userData']['idrol'] == 1) ||
-							($_SESSION['userData']['idrol'] == 1 and $arrData[$i]['idrol'] != 1) and
-							($_SESSION['userData']['idpersona'] != $arrData[$i]['idpersona'] )
-							 ){
+						($_SESSION['userData']['idrol'] == 1 and $arrData[$i]['idrol'] != 1) and
+						($_SESSION['userData']['idpersona'] != $arrData[$i]['idpersona'] )
+						){
 							$btnDelete = '<button class="btn btn-danger btn-sm btnDelUsuario" onClick="fntDelUsuario('.$arrData[$i]['idpersona'].')" title="Eliminar usuario"><i class="far fa-trash-alt"></i></button>';
-						}else{
+							}else{
 							$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
 						}
 					}
@@ -132,7 +132,7 @@
 			}
 			die();
 		}
-
+		
 		public function getUsuario($idpersona){
 			if($_SESSION['permisosMod']['r']){
 				$idusuario = intval($idpersona);
@@ -142,7 +142,7 @@
 					if(empty($arrData))
 					{
 						$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
-					}else{
+						}else{
 						$arrResponse = array('status' => true, 'data' => $arrData);
 					}
 					echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
@@ -150,7 +150,7 @@
 			}
 			die();
 		}
-
+		
 		public function delUsuario()
 		{
 			if($_POST){
@@ -160,7 +160,7 @@
 					if($requestDelete)
 					{
 						$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el usuario');
-					}else{
+						}else{
 						$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el usuario.');
 					}
 					echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
@@ -168,7 +168,7 @@
 			}
 			die();
 		}
-
+		
 		public function perfil(){
 			$data['page_tag'] = "Perfil";
 			$data['page_title'] = "Perfil de usuario";
@@ -176,13 +176,13 @@
 			$data['page_functions_js'] = "functions_usuarios.js";
 			$this->views->getView($this,"perfil",$data);
 		}
-
+		
 		public function putPerfil(){
 			if($_POST){
 				if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono']) )
 				{
 					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-				}else{
+					}else{
 					$idUsuario = $_SESSION['idUser'];
 					$strIdentificacion = strClean($_POST['txtIdentificacion']);
 					$strNombre = strClean($_POST['txtNombre']);
@@ -193,16 +193,16 @@
 						$strPassword = hash("SHA256",$_POST['txtPassword']);
 					}
 					$request_user = $this->model->updatePerfil($idUsuario,
-																$strIdentificacion, 
-																$strNombre,
-																$strApellido, 
-																$intTelefono, 
-																$strPassword);
+					$strIdentificacion, 
+					$strNombre,
+					$strApellido, 
+					$intTelefono, 
+					$strPassword);
 					if($request_user)
 					{
 						sessionUser($_SESSION['idUser']);
 						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
-					}else{
+						}else{
 						$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
 					}
 				}
@@ -210,26 +210,26 @@
 			}
 			die();
 		}
-
+		
 		public function putDFical(){
 			if($_POST){
 				if(empty($_POST['txtNit']) || empty($_POST['txtNombreFiscal']) || empty($_POST['txtDirFiscal']) )
 				{
 					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-				}else{
+					}else{
 					$idUsuario = $_SESSION['idUser'];
 					$strNit = strClean($_POST['txtNit']);
 					$strNomFiscal = strClean($_POST['txtNombreFiscal']);
 					$strDirFiscal = strClean($_POST['txtDirFiscal']);
 					$request_datafiscal = $this->model->updateDataFiscal($idUsuario,
-																		$strNit,
-																		$strNomFiscal, 
-																		$strDirFiscal);
+					$strNit,
+					$strNomFiscal, 
+					$strDirFiscal);
 					if($request_datafiscal)
 					{
 						sessionUser($_SESSION['idUser']);
 						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
-					}else{
+						}else{
 						$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
 					}
 				}
@@ -237,6 +237,6 @@
 			}
 			die();
 		}
-
+		
 	}
- ?>
+?>

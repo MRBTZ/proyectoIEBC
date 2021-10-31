@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', function(){
 		let formLogin = document.querySelector("#formLogin");
 		formLogin.onsubmit = function(e) {
 			e.preventDefault();
-
+			
 			let strEmail = document.querySelector('#txtEmail').value;
 			let strPassword = document.querySelector('#txtPassword').value;
-
+			
 			if(strEmail == "" || strPassword == "")
 			{
 				swal("Por favor", "Escribe usuario y contraseñaa.", "error");
 				return false;
-			}else{
+				}else{
 				divLoading.style.display = "flex";
 				var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 				var ajaxUrl = base_url+'/Login/loginUser'; 
@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', function(){
 						if(objData.status)
 						{
 							window.location = base_url+'/dashboard';
-						}else{
+							}else{
 							swal("Atención", objData.msg, "error");
 							document.querySelector('#txtPassword').value = "";
 						}
-					}else{
+						}else{
 						swal("Atención","Error en el proceso", "error");
 					}
 					divLoading.style.display = "none";
@@ -44,30 +44,30 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 		}
 	}
-
+	
 	if(document.querySelector("#formRecetPass")){		
 		let formRecetPass = document.querySelector("#formRecetPass");
 		formRecetPass.onsubmit = function(e) {
 			e.preventDefault();
-
+			
 			let strEmail = document.querySelector('#txtEmailReset').value;
 			if(strEmail == "")
 			{
 				swal("Por favor", "Escribe tu correo electrónico.", "error");
 				return false;
-			}else{
+				}else{
 				divLoading.style.display = "flex";
 				var request = (window.XMLHttpRequest) ? 
-								new XMLHttpRequest() : 
-								new ActiveXObject('Microsoft.XMLHTTP');
-								
+				new XMLHttpRequest() : 
+				new ActiveXObject('Microsoft.XMLHTTP');
+				
 				var ajaxUrl = base_url+'/Login/resetPass'; 
 				var formData = new FormData(formRecetPass);
 				request.open("POST",ajaxUrl,true);
 				request.send(formData);
 				request.onreadystatechange = function(){
 					if(request.readyState != 4) return;
-
+					
 					if(request.status == 200){
 						var objData = JSON.parse(request.responseText);
 						if(objData.status)
@@ -78,15 +78,15 @@ document.addEventListener('DOMContentLoaded', function(){
 								type: "success",
 								confirmButtonText: "Aceptar",
 								closeOnConfirm: false,
-							}, function(isConfirm) {
+								}, function(isConfirm) {
 								if (isConfirm) {
 									window.location = base_url;
 								}
 							});
-						}else{
+							}else{
 							swal("Atención", objData.msg, "error");
 						}
-					}else{
+						}else{
 						swal("Atención","Error en el proceso", "error");
 					}
 					divLoading.style.display = "none";
@@ -95,20 +95,20 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 		}
 	}
-
+	
 	if(document.querySelector("#formCambiarPass")){
 		let formCambiarPass = document.querySelector("#formCambiarPass");
 		formCambiarPass.onsubmit = function(e) {
 			e.preventDefault();
-
+			
 			let strPassword = document.querySelector('#txtPassword').value;
 			let strPasswordConfirm = document.querySelector('#txtPasswordConfirm').value;
 			let idUsuario = document.querySelector('#idUsuario').value;
-
+			
 			if(strPassword == "" || strPasswordConfirm == ""){
 				swal("Por favor", "Escribe la nueva contraseña." , "error");
 				return false;
-			}else{
+				}else{
 				if(strPassword.length < 5 ){
 					swal("Atención", "La contraseña debe tener un mínimo de 5 caracteres." , "info");
 					return false;
@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', function(){
 				}
 				divLoading.style.display = "flex";
 				var request = (window.XMLHttpRequest) ? 
-							new XMLHttpRequest() : 
-							new ActiveXObject('Microsoft.XMLHTTP');
+				new XMLHttpRequest() : 
+				new ActiveXObject('Microsoft.XMLHTTP');
 				var ajaxUrl = base_url+'/Login/setPassword'; 
 				var formData = new FormData(formCambiarPass);
 				request.open("POST",ajaxUrl,true);
@@ -137,15 +137,15 @@ document.addEventListener('DOMContentLoaded', function(){
 								type: "success",
 								confirmButtonText: "Iniciar sessión",
 								closeOnConfirm: false,
-							}, function(isConfirm) {
+								}, function(isConfirm) {
 								if (isConfirm) {
 									window.location = base_url+'/login';
 								}
 							});
-						}else{
+							}else{
 							swal("Atención",objData.msg, "error");
 						}
-					}else{
+						}else{
 						swal("Atención","Error en el proceso", "error");
 					}
 					divLoading.style.display = "none";
@@ -153,5 +153,5 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 		}
 	}
-
+	
 }, false);
