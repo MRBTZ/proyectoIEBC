@@ -34,7 +34,7 @@
 		</div>
 
 		<div class="right-column">
-      <a class="button background2-left-column" href="<?= base_url(); ?>/qr" class="btn btn-primary">INGRESAR</a>
+      <a class="button background2-left-column" href="qrcode/lector/index.php" class="btn btn-primary">INGRESAR</a>
 		</div>
 
 	</div>

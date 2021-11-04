@@ -1,0 +1,38 @@
+
+
+.navbar-brand{
+  color: #fff;
+}
+
+.glyphicon{
+  color: #fff;
+}
+
+.navbar-right{
+  color: #fff;
+}
+
+.navbar{
+  background:#222d32;
+}
+
+#container1{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  padding: 3px 10px;
+  border: rgb(3, 38, 43) 5px solid;
+  border-radius: 20px;
+}
+
+#container2{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+}

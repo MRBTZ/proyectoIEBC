@@ -49,7 +49,7 @@
 				</a>
 				<ul class="treeview-menu">
 					<li><a class="treeview-item" href="<?= base_url(); ?>/maestro"><i class="icon fas fa-user-tie"></i> Registrar Maestro</a></li>
-					<li><a class="treeview-item" href="<?= base_url(); ?>/generador"><i class="icon fas fa-qrcode"></i> Generador de QR</a></li>
+					<!--<li><a class="treeview-item" href="qrcode/generador/genqr.php"><i class="icon fas fa-qrcode"></i> Generador de QR</a></li>-->
 					<li><a class="treeview-item" href="<?= base_url(); ?>/asistencia"><i class="icon fas fa-clipboard-list"></i> Asistencias</a></li>
 				</ul>
 			</li>
