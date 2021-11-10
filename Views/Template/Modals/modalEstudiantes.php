@@ -16,22 +16,22 @@
 					<div class="form-row">
 						<div class="form-group col-md-4">
 							<label for="txtIdentificacion">DPI <span class="required">*</span></label>
-							<input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" required="">
+							<input type="text" maxlength="13" class="form-control valid validNumber" id="txtIdentificacion" name="txtIdentificacion" required="" oninput="maxlengtNumber(this);" onkeypress="return controlTag(event);">
 						</div>
 						<div class="form-group col-md-4">
 							<label for="txtNombre">Nombres <span class="required">*</span></label>
-							<input type="text" class="form-control valid validText" id="txtNombre" name="txtNombre" required="">
+							<input type="text" class="form-control valid validText" id="txtNombre" name="txtNombre" required="" onkeypress="return controlTagt(event);">
 						</div>
 						<div class="form-group col-md-4">
 							<label for="txtApellido">Apellidos <span class="required">*</span></label>
-							<input type="text" class="form-control valid validText" id="txtApellido" name="txtApellido" required="">
+							<input type="text" class="form-control valid validText" id="txtApellido" name="txtApellido" required="" onkeypress="return controlTagt(event);">
 						</div>
 					</div>
 					
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="txtTelefono">Teléfono</label>
-							<input type="text" class="form-control valid validNumber" id="txtTelefono" name="txtTelefono" required="" onkeypress="return controlTag(event);">
+							<input type="text" maxlength="8" class="form-control valid validNumber" id="txtTelefono" name="txtTelefono" required="" oninput="maxlengtNumber(this);" onkeypress="return controlTag(event);">
 						</div>
 						<div class="form-group col-md-6">
 							<label for="txtDirección">Dirección</label>
@@ -43,15 +43,15 @@
 					<p class="text primary">Datos del estudiantes</p>
 					
 					<div class="form-row">
-						<div class="form-group col-md-5">
+						<div class="form-group col-md-4">
 							<label for="txtNombreE">Nombres<span class="required">*</span></label>
-							<input type="text" class="form-control valid validText" id="txtNombreE" name="txtNombreE" required="">
+							<input type="text" class="form-control valid validText" id="txtNombreE" name="txtNombreE" required="" onkeypress="return controlTagt(event);">
 						</div>
-						<div class="form-group col-md-5">
+						<div class="form-group col-md-4">
 							<label for="txtApellidoE">Apellidos<span class="required">*</span></label>
-							<input type="text" class="form-control valid validText" id="txtApellidoE" name="txtApellidoE" required="">
+							<input type="text" class="form-control valid validText" id="txtApellidoE" name="txtApellidoE" required="" onkeypress="return controlTagt(event);">
 						</div>
-						<div class="form-group col-md-2">
+						<div class="form-group col-md-4">
 							<label for="txtFecha">Fecha Nacimiento</label>
 							<input type="date" class="form-control" id="txtFecha" name="txtFecha" required="">
 						</div>
@@ -60,7 +60,7 @@
 					<div class="form-row">
 						<div class="form-group col-md-2">
 							<label for="txtCiclo">Ciclo escolar</label>
-							<input type="text" class="form-control" id="txtCiclo" name="txtCiclo" required="">
+							<input type="text" maxlength="4" class="form-control valid validNumber" id="txtCiclo" name="txtCiclo" required="" oninput="maxlengtNumber(this);" onkeypress="return controlTag(event);">
 						</div>
 						<div class="form-group col-md-5">
 							<label for="listGradoid">Grado</label>

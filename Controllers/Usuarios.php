@@ -94,9 +94,7 @@
 			if($_SESSION['permisosMod']['r']){
 				$arrData = $this->model->selectUsuarios();
 				for ($i=0; $i < count($arrData); $i++) {
-					$btnView = '';
-					$btnEdit = '';
-					$btnDelete = '';
+
 					
 					if($arrData[$i]['status'] == 1)
 					{

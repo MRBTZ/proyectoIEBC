@@ -25,13 +25,13 @@
         public function selectGrado()
 		{
 			
-            $whereAdmin = "";
+            /*$whereAdmin = "";
 			if($_SESSION['idUser'] != 1 ){
 				$whereAdmin = " and idrol != 1 ";
-			}
+			}*/
             
 			//EXTRAE ROLES
-			$sql = "SELECT * FROM grado WHERE status != 0".$whereAdmin;
+			$sql = "SELECT * FROM grado WHERE status != 0"/*.$whereAdmin*/;
 			$request = $this->select_all($sql);
 			return $request;
 			
@@ -89,15 +89,15 @@
 		// consulta a la bd a la data tables
 		public function selectEstudiantes()
 		{
-			$whereAdmin = "";
+			/*$whereAdmin = "";
 			if($_SESSION['idUser'] != 1 ){
 				$whereAdmin = " and p.idpersona != 1 ";
-			}
+			}*/
 			$sql = "SELECT e.idestudiante,e.identificacion,e.nombres,e.apellidos,e.telefono,e.direccion, e.nombresE, e.apellidosE, e.fechaN, e.descripcionP,g.grado 
 			FROM estudiante e 
 			INNER JOIN grado g
 			ON e.gradoid = g.idgrado
-			WHERE e.gradoid = 1".$whereAdmin;
+			WHERE e.gradoid = 1"/*.$whereAdmin*/;
 			$request = $this->select_all($sql);
 			return $request;
 		}

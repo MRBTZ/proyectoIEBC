@@ -25,13 +25,13 @@
         public function selectCursos()
 		{
 			
-            $whereAdmin = "";
+            /*$whereAdmin = "";
 			if($_SESSION['idUser'] != 1 ){
 				$whereAdmin = " and idrol != 1 ";
-			}
+			}*/
             
 			//EXTRAE ROLE
-			$sql = "SELECT * FROM curso WHERE status != 0".$whereAdmin;
+			$sql = "SELECT * FROM curso WHERE status != 0"/*.$whereAdmin*/;
 			$request = $this->select_all($sql);
 			return $request;
 			
@@ -86,15 +86,15 @@
 		/*-------------------------------------------------------------------------------------------------*/
 		public function selectMaestro()
 		{
-			$whereAdmin = "";
+			/*$whereAdmin = "";
 			if($_SESSION['idUser'] != 1 ){
 				$whereAdmin = " and p.idpersona != 1 "; //verificar el funcionamientode esta funcion
-			}
+			}*/
 			$sql = "SELECT m.idmaestro,m.identificacion,m.nombres,m.apellidos,m.telefono,m.direccion, m.codigo, c.cursos, m.status 
 			FROM maestro m 
 			INNER JOIN curso c
 			ON m.cursoid = c.idcurso
-			WHERE m.status != 0".$whereAdmin;
+			WHERE m.status != 0"/*.$whereAdmin*/;
 			$request = $this->select_all($sql);
 			return $request;
 		}

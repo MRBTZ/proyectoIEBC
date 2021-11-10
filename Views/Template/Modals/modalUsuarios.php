@@ -16,23 +16,23 @@
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="txtIdentificacion">Identificación</label>
-							<input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" required="">
+							<input type="text" maxlength="13" class="form-control valid validNumber" id="txtIdentificacion" name="txtIdentificacion" required="" oninput="maxlengtNumber(this);" onkeypress="return controlTag(event);">
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="txtNombre">Nombres</label>
-							<input type="text" class="form-control valid validText" id="txtNombre" name="txtNombre" required="">
+							<input type="text" class="form-control valid validText" id="txtNombre" name="txtNombre" required="" onkeypress="return controlTagt(event);">
 						</div>
 						<div class="form-group col-md-6">
 							<label for="txtApellido">Apellidos</label>
-							<input type="text" class="form-control valid validText" id="txtApellido" name="txtApellido" required="">
+							<input type="text" class="form-control valid validText" id="txtApellido" name="txtApellido" required="" onkeypress="return controlTagt(event);">
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="txtTelefono">Teléfono</label>
-							<input type="text" class="form-control valid validNumber" id="txtTelefono" name="txtTelefono" required="" onkeypress="return controlTag(event);">
+							<input type="text" maxlength="8" class="form-control valid validNumber" id="txtTelefono" name="txtTelefono" required="" oninput="maxlengtNumber(this);" onkeypress="return controlTag(event);">
 						</div>
 						<div class="form-group col-md-6">
 							<label for="txtEmail">Email</label>

@@ -1,3 +1,14 @@
+function maxlengtNumber(obj){
+
+	console.log(obj.value);
+	if (obj.value.length > obj.maxLengt) {
+		obj.value = obj.value.slice(0, obj.maxLengt);
+
+	}
+
+}
+
+
 
 function controlTag(e) {
     tecla = (document.all) ? e.keyCode : e.which;
@@ -7,6 +18,18 @@ function controlTag(e) {
     n = String.fromCharCode(tecla);
     return patron.test(n); 
 }
+
+
+
+function controlTagt(e) {
+    tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla==8) return true; 
+    else if (tecla==0||tecla==9)  return true;
+    patron =/[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]/;
+    n = String.fromCharCode(tecla);
+    return patron.test(n); 
+}
+
 
 function testText(txtString){
     var stringText = new RegExp(/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/);

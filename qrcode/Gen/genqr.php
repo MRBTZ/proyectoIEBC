@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="../Lector/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Lector/style.css">
     </head>
-    <body >
+    <body class="row justify-content-center align-items-center vh-100" >
     <!--Barra del Lector-->
       <nav class="navbar">
         <div class="container-fluid">
@@ -35,7 +35,7 @@
         <br>
       </div>
       
-      <div class="container" id="conteiner1">
+      <div class="container" id="conteiner1" >
         <div class="row">
           <div class="tile">
             <div class="tile-title-w-btn">
@@ -47,7 +47,7 @@
               <button type="button" id="enviar" class="btn btn-primary" onclick="javascript:enviar_texto();"> Generar</button>
               <a class="btn btn-info" href="img/imgpractqr.png" download="QR.png">Descargar</a>
               <br clear="all"><br clear="all">
-              <div class="qrimagen" id="cont_img">
+              <div class="qrimagen" id="cont_img" >
               </div>
               <a class="btn btn-link"  href="../Gen/genqr.php">Recargar</a>
             </div>
