@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">
 		<link rel="stylesheet" type="text/css" href="<?= media();?>/css/bootstrap-select.min.css"> 
 		<link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css">
+		
 	</head>
 	<!--cambio del ejerco del sirbar-->
 	<body class="app sidebar-mini pace-running sidenav-toggled">
@@ -29,13 +30,17 @@
 			<!-- Navbar Right Menu-->
 			<ul class="app-nav">
 				<!-- User Menu-->
-				<li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+				<li class="dropdown"><a class="app-nav__item" href="<?= base_url(); ?>/respaldo.php" ><i class="fas fa-download"> Backup</i></a>
+					
+
+				<li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fas fa-sign-out-alt"></i> Salir</a>
 					<ul class="dropdown-menu settings-menu dropdown-menu-right">
-						<li><a class="dropdown-item" href="<?= base_url(); ?>/opciones"><i class="fa fa-cog fa-lg"></i> Ajustes</a></li>
+						<!--<li><a class="dropdown-item" href="<?= base_url(); ?>/opciones"><i class="fa fa-cog fa-lg"></i> Ajustes</a></li>-->
 						<li><a class="dropdown-item" href="<?= base_url(); ?>/usuarios/perfil"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
 						<li><a class="dropdown-item" href="<?= base_url(); ?>/logout"><i class="fa fa-sign-out fa-lg"></i> Exit</a></li>
 					</ul>
 				</li>
+
 			</ul>
 		</header>
 	<?php require_once("nav_admin.php"); ?> 	

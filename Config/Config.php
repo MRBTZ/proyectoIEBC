@@ -1,21 +1,14 @@
 <?php
 
-	//define("BASE_URL", "http://localhost/Proyectos/IEBC");
-	const BASE_URL = "http://localhost/Proyectos/IEBC";
-	//const BASE_URL = "https://192.168.1.49/Proyectos/IEBC";
-	//const BASE_URL = "https://iebcchotaweb.000webhostapp.com";
-	//const BASE_URL = "http://iebcchotaweb.000webhostapp.com";
 
-	//Zona horaria
+	const BASE_URL = "http://localhost/Proyectos/IEBC";
+
+
 	date_default_timezone_set('America/Guatemala');
 
-	//Datos de conexión a Base de Datos
 	const DB_HOST = "localhost";
-	//const DB_NAME = "id17831441_base_de_datos_iebc";
 	const DB_NAME = "base_de_datos_iebc";
-	//const DB_USER = "id17831441_iebcmich";
 	const DB_USER = "root";
-	//const DB_PASSWORD = "Hc1#ZY\GE*/=lqmG";
 	const DB_PASSWORD = "";
 	const DB_CHARSET = "utf8";
 

@@ -1,4 +1,21 @@
+#centrador{
+  text-align: center;
+  justify-content: center;
+  /*position: relative;*/
+  width: 400px;
+  height: 400px;
 
+}
+
+#logoimg{
+    position: absolute;
+    width: 300px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
 
 .app-sidebar__user-avatar {
     width: 48px;
@@ -128,6 +145,16 @@
 	opacity: 80%;
 	font-family: 'Times New Roman', Times, serif;
 	
+}
+
+.qrimagen{
+	margin-left: 40%;
+    margin-right: 10%;
+    WIDTH: 40%; 
+    HEIGHT: 50px;
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    height: auto;
 }
 
 

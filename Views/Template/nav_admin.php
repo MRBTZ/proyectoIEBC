@@ -49,7 +49,7 @@
 				</a>
 				<ul class="treeview-menu">
 					<li><a class="treeview-item" href="<?= base_url(); ?>/maestro"><i class="icon fas fa-user-tie"></i> Registrar Maestro</a></li>
-					<!--<li><a class="treeview-item" href="qrcode/generador/genqr.php"><i class="icon fas fa-qrcode"></i> Generador de QR</a></li>-->
+					<li><a class="treeview-item" href="<?= base_url(); ?>/genqrr"><i class="icon fas fa-qrcode"></i> Generador de QR</a></li>
 					<li><a class="treeview-item" href="<?= base_url(); ?>/asistencia"><i class="icon fas fa-clipboard-list"></i> Asistencias</a></li>
 				</ul>
 			</li>
@@ -57,7 +57,7 @@
 
 		<?php if(!empty($_SESSION['permisos'][5]['r'])){ ?>
 			<li>
-				<a class="app-menu__item" href="<?= base_url(); ?>/sms">
+				<a class="app-menu__item" href="<?= base_url(); ?>/api">
 					<i class="app-menu__icon far fa-comment" aria-hidden="true"></i>
 					<span class="app-menu__label">SMS</span>
 				</a>

@@ -34,9 +34,9 @@
 					
 					if($arrData[$i]['status'] == 0)
 					{
-						$arrData[$i]['status'] = '<span class="badge badge-danger">No Asistió</span>';
+						$arrData[$i]['status'] = '<span class="badge badge-danger">No completado</span>';
 						}else{
-						$arrData[$i]['status'] = '<span class="badge badge-success">Asistió</span>';
+						$arrData[$i]['status'] = '<span class="badge badge-success">completado</span>';
 					}
 					
 					

@@ -9,7 +9,6 @@ function maxlengtNumber(obj){
 }
 
 
-
 function controlTag(e) {
     tecla = (document.all) ? e.keyCode : e.which;
     if (tecla==8) return true; 

@@ -25,18 +25,12 @@
 						<table class="table table-hover table-bordered" id="tableEstudiantess">
 							<thead>
 								<tr>
-									<!--<th>ID</th>-->
-									<!--<th>Identificación</th>-->
-									<!--<th>Nombres Encargado</th>-->
-									<!--<th>Apellidos Encargado</th>-->
 									<th>Nombres Estudiante</th>
 									<th>Apellidos Estudiante</th>
 									<th>Teléfono</th>
 									<th>Dirección</th>
 									<th>Fecha de nacimiento</th>
 									<th>Papeleria</th>
-									<!--<th>Descripción</th>-->
-									<!--<th>Grado</th>-->
 									<th>Acciones</th>
 								</tr>
 							</thead>
